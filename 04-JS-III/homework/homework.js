@@ -60,7 +60,7 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
 
-return palabras.join(' ')
+return palabras.join(' ');
 }
 
 
@@ -95,9 +95,14 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
 
-  var suma = agregarNumeros (resultadosTest)
-  var promedio = suma / resultadosTest.length
-  return promedio;
+  //var suma = agregarNumeros (resultadosTest)
+  //var promedio = suma / resultadosTest.length
+  //return promedio;
+  var total = 0;
+  for (var i=0; i < resultadosTest.length; i++) {
+    total = total + resultadosTest[i];
+  }  
+    return total / resultadosTest.length;
 }
 
 
