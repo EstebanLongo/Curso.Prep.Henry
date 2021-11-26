@@ -70,11 +70,12 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
+ 
   if (usuario ['email']){
     return true;
   }else {
     return false;
-  }
+ } 
 }
 
 
@@ -135,9 +136,13 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  for (var i = 0; i < usuario.length; i++) {
-    
+
+  var suma = 0;
+
+  for (var i = 0; i < usuario.posts.length; i++) {
+    suma = suma + usuario.posts[i].likes;
   }
+  return suma;
 }
 
 function agregarMetodoCalculoDescuento(producto) {
