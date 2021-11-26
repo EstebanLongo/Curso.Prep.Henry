@@ -14,6 +14,7 @@ function crearUsuario() {
     this.email = opciones.email;
     this.password = opciones.password;  
   }
+
   Usuario.prototype.saludar = function () {
     return 'Hola, mi nombre es ' + this.nombre;
   } 
@@ -35,11 +36,7 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
-
-  String.prototype.reverse = function () {
-    return 
-  }
-
+  
 }
 
 // ---------------------------------------------------------------------------//
@@ -76,7 +73,7 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
   var nuevaPersona = new Persona (nombre, apellido, edad, dir);
-  return persona;
+  return nuevaPersona; 
 }
   
 function agregarMetodo() {
@@ -84,11 +81,9 @@ function agregarMetodo() {
   //Ej: "Juan, 22 años"
 
   Persona.prototype.datos = function () {
-    return {
-      this.nombre + ', ' + this.edad;
+    return this.nombre + ', ' + this.edad + " años";
     }
   }
-}
   
 
 // No modificar nada debajo de esta línea
