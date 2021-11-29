@@ -31,13 +31,14 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto [metodo]();
+  objeto[metodo] ();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
+  
   var multiplicacion = objetoMisterioso.numeroMisterioso * 5;
   return multiplicacion;
 
@@ -97,7 +98,16 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  return usuario ['password'] === password;
+  //return usuario ['password'] === password;
+
+  // POR QUE PASSWORD VA CON ''? 
+
+  if (usuario['password'] == password) {
+    return true;
+  } 
+  else {
+    return false;
+  }
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
@@ -106,6 +116,10 @@ function actualizarPassword(usuario, nuevaPassword) {
   // Tu código:
   usuario.password = nuevaPassword;
   return usuario;
+
+  //usuario[password] = 'nuevagPassword'; 
+  //return usuario;
+  // PORQUE NO ES ASI? 
 }
 
 function agregarAmigo(usuario, nuevoAmigo) {
@@ -140,7 +154,7 @@ function sumarLikesDeUsuario(usuario) {
   var suma = 0;
 
   for (var i = 0; i < usuario.posts.length; i++) {
-    suma = suma + usuario.posts[i].likes;
+    suma = suma + usuario.posts[i].likes; //PORQUE POSTS[I].likes????
   }
   return suma;
 }
@@ -155,7 +169,15 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+ 
 
+  //como se cuando usar bracket notation o dot notation?
+
+  producto.calcularPrecioDescuento = function () {
+    var mult = producto.precio * producto.porcentajeDeDescuento;
+    return this.precio - mult;
+  }
+  return producto;
 }
 
 // No modificar nada debajo de esta línea

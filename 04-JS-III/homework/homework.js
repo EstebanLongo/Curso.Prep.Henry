@@ -256,6 +256,22 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
 
+  var array = [];
+  for (var i=0; i < 10; i++) {
+  numero = numero +2;
+  if (numero === i) {
+    break;
+  } else {
+    array.push(numero);
+  }
+  }
+    if (i < 10) {
+      return "Se interrumpió la ejecución"
+    } else {
+      return array;
+    }
+
+
 }
 
 
