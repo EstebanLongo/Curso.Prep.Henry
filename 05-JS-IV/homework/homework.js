@@ -98,6 +98,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
+
   //return usuario ['password'] === password;
 
   // POR QUE PASSWORD VA CON ''? 
@@ -171,13 +172,15 @@ function agregarMetodoCalculoDescuento(producto) {
   // Tu código:
  
 
-  //como se cuando usar bracket notation o dot notation?
+  //como se cuando usar bracket notation o dot notation? 
+  //por que tengo me pasa con this.precio y no con producto.precio - mult
 
   producto.calcularPrecioDescuento = function () {
     var mult = producto.precio * producto.porcentajeDeDescuento;
     return this.precio - mult;
   }
   return producto;
+
 }
 
 // No modificar nada debajo de esta línea
