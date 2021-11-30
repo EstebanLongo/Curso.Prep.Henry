@@ -112,7 +112,7 @@ function verificarPassword(usuario, password) {
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
   usuario.password = nuevaPassword;
@@ -152,10 +152,12 @@ function sumarLikesDeUsuario(usuario) {
   // Devuelve la suma
   // Tu código:
 
+// PORQUE usuario.post[i].likes ??? 
+  
   var suma = 0;
 
   for (var i = 0; i < usuario.posts.length; i++) {
-    suma = suma + usuario.posts[i].likes; //PORQUE POSTS[I].likes????
+    suma = suma + usuario.posts[i].likes; 
   }
   return suma;
 }
@@ -170,14 +172,13 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
- 
 
-  //como se cuando usar bracket notation o dot notation? 
-  //por que tengo me pasa con this.precio y no con producto.precio - mult
+
+  //por que me pasa el test con this.precio y no con producto.precio 
 
   producto.calcularPrecioDescuento = function () {
     var mult = producto.precio * producto.porcentajeDeDescuento;
-    return this.precio - mult;
+    return producto.precio - mult;
   }
   return producto;
 

@@ -236,13 +236,13 @@ function mayorACien(array) {
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
 
-  var mayor = []
+  var mayor = [];
   for (var i=0; i < array.length; i++) {
     if (array[i] > 100) {
-      Mayores.push(array[i])
+      mayor.push(array[i]);
     }
-    return Mayores;
   }
+    return mayor;
 
 }
 
