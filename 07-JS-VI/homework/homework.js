@@ -6,11 +6,16 @@ function mayuscula(nombre) {
   //Tu código:
 
   return nombre[0].toUpperCase() + nombre.slice(1);
+
+  /*String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase + this.slice(1)
+  }  */
 }
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
+
   cb();
 }
 
@@ -19,7 +24,7 @@ function operacionMatematica(n1, n2, cb) {
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
 
-  return cb(n1, n2);
+  return cb (n1, n2);
 }
 
 function sumarArray(numeros, cb) {
@@ -27,12 +32,12 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var numeros = [1, 2, 3, 4, 5]
-  var suma = 0;
-  for (var i=0; i < numeros.length; i++) {
-    suma = suma + numeros[i];
-  }
-    cb(suma);
+
+  var suma = numeros.reduce(function (acc,elemento) {
+      return acc + elemento;
+  }, 0);
+
+  cb (suma);  
 }
 
 function forEach(array, cb) {
@@ -40,9 +45,7 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
 
-  for (i=0; i < array.length; i++) {
-    cb(array[i]);
-  }
+  array.forEach (function (elemento) {cb(elemento)});
 }
 
 function map(array, cb) {
@@ -50,12 +53,24 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+  var nuevoArray = [];
+  array.map (function (elemento) {
+    nuevoArray.push(cb(elemento));
+  } )
+  return nuevoArray;
+
 }
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
+  var newArray = array.filter(function(el) {
+    if (el[0] === 'a') {
+      return el;
+    }
+  })
+    return newArray;
 }
 
 // No modificar nada debajo de esta línea
